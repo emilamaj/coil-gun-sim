@@ -19,8 +19,8 @@ import CoilEditor from "@/components/CoilEditor.vue";
 import CoilViewer from "@/components/CoilViewer.vue";
 import GraphViewer from "@/components/GraphViewer.vue";
 
-import Vector from "@/vector/vector.js";
-import 
+import Vector from "@/maxwell/vector.js";
+import BiotSavart from "@/maxwell/maxwell.js";
 
 export default {
   name: "Coil",
@@ -32,7 +32,10 @@ export default {
   },
   data: function () {
     return {
-      coilParams: { layerCount: 3, layerTurns: 10, wireDia: 1 },
+      polygonApprox: 24,
+      coilParams: { layerCount: 3, layerTurns: 10, innerRadius: 5, wireDia: 1 },
+      coilPoints: [],
+      range: { x: [-100, 100], y: [-100, 100], z: [-100, 100] },
       graphData: {
         points: [
           [0, 0, 0, 0, 0, 0, 0, 0],
@@ -51,6 +54,15 @@ export default {
     };
   },
   methods: {
+    buildGeometry() {
+      for (let layer = 0; layer < this.coilParams.layerCount; layer++) {
+        for (let turn = 0; turn < this.coilParams.layerTurns; turn++) {
+          for (let i = 0; i < this.polygonApprox; i++) {
+            
+          }
+        }
+      }
+    },
     magneticField() {},
     coilParamsUpdate(event) {
       //Although arrays are passed by reference, since the original array is often spliced, we need to update the references.

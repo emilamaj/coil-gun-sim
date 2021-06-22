@@ -17,6 +17,14 @@
       />
     </div>
     <div class="param">
+      <span class="inputLabel">Inner Radius</span
+      ><input
+        class="paramInput"
+        type="number"
+        v-model="coilParams.innerRadius"
+      />
+    </div>
+    <div class="param">
       <span class="inputLabel">Wire Diameter</span
       ><input class="paramInput" type="number" v-model="coilParams.wireDia" />
     </div>
@@ -29,7 +37,7 @@ export default {
   props: {},
   data: function () {
     return {
-      coilParams: { layerCount: 3, layerTurns: 10, wireDia: 1 },
+      coilParams: { layerCount: 3, layerTurns: 10, innerRadius: 5, wireDia: 1 },
     };
   },
   methods: {},

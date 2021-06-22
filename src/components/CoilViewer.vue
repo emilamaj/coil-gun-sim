@@ -109,9 +109,7 @@ export default {
     this.renderer.setSize(this.dimensions.width, this.dimensions.height);
     //this.renderer.setClearColor(0x20252f);
     this.renderer.setPixelRatio(window.devicePixelRatio);
-    document
-      .getElementById("CoilViewer")
-      .appendChild(this.renderer.domElement);
+    document.getElementById("CoilViewer").appendChild(this.renderer.domElement);
     // controls
     this.controls = new THREE.OrbitControls(
       this.camera,
